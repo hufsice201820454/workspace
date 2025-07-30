@@ -105,3 +105,8 @@ dmypy.json
 
 # Local configuration
 *.local
+
+git rm --cached path/to/secret.env
+echo "secret.env" >> .gitignore
+git commit -m "Remove restricted files"
+
