@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>http://10.250.73.116:5500/profile.html</title>
+  <style>
+    body {
+      font-family: '맑은 고딕', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      margin-bottom: 15px;
+    }
+
+    article {
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+
+    a {
+      color: #4a90e2;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #666;
+      margin-top: 50px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #357ab7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 제목 -->
+  <header>
+    <h1>이광호</h1>
+  </header>
+
+  <!-- 전체 섹션 -->
+  <section>
+
+    <!-- 자기소개 -->
+    <article>
+      <h2>자기소개</h2>
+      <p>이름: 이광호</p>
+      <p>나이: 28세</p>
+      <p>전공: 정보통신공학 / 컴퓨터전자시스템공학부(부)</p>
+    </article>
+
+    <!-- 이미지 -->
+<article>
+  <h2>프로젝트 진행 코드 사진</h2>
+
+  <!-- 이미지 두 개를 나란히 배치하는 컨테이너 -->
+  <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <img src="album/project.png" alt="과제하던 사진" style="max-width: 48%; height: auto; flex: 1;">
+    <img src="album/data.png" alt="데이터 분석 사진" style="max-width: 48%; height: auto; flex: 1;">
+  </div>
+
+  <p>
+    📄 <a href="album/project.pdf" target="_blank">
+      음성합성 및 챗봇을 이용한 실시간 대화 시스템 프로젝트 결과 보고서
+    </a>
+  </p>
+</article>
+
+    <!-- 여기서 얻고 싶은 것 -->
+    <article>
+      <h2>여기서 얻고 싶은 것</h2>
+      <ul>
+        <li>개발 능력 및 애매하게 알고 있던 내용의 취합</li>
+        <li>팀 프로젝트 협업 경험</li>
+      </ul>
+    </article>
+
+    <!-- 학력 / 경력 -->
+    <article>
+      <h2>학력 / 경력</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>학교(회사)명</th>
+            <th>기간</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>학력</td>
+            <td>강동고등학교</td>
+            <td>2014.03 ~ 2017.02</td>
+          </tr>
+          <tr>
+            <td>학력</td>
+            <td>한국외국어대학교 정보통신공학과</td>
+            <td>2018.03 ~ 2024.02</td>
+          </tr>
+          <tr>
+            <td>학력</td>
+            <td>한국외국어대학교 컴퓨터전자시스템공학부(부)</td>
+            <td>2023.03 ~ 2024.02</td>
+          </tr>
+          <tr>
+            <td>경력</td>
+            <td>IT 인프라분야 (Linux, Window 서버)</td>
+            <td>2024.10 ~ 2025.03</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- 외부 링크 -->
+    <article>
+      <h2>좋아하는 사이트</h2>
+      <p><a href="https://chat.openai.com/" target="_blank">ChatGPT</a></p>
+    </article>
+
+    <!-- 리버풀 영상 (위치 이동) -->
+    <article>
+      <h2>취미 - 축구 경기 감상</h2>
+      <iframe width="100%" height="315"
+              src="https://www.youtube.com/embed/9Y25PcCDxH4"
+              title="Liverpool Highlight"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </article>
+
+    <!-- 피드백 폼 -->
+    <article>
+      <h2>설문 조사</h2>
+      <form>
+        <label for="feedback">하고 싶은 말:</label><br>
+        <textarea id="feedback" name="feedback" rows="4"></textarea><br>
+        <button type="submit">보내기</button>
+      </form>
+    </article>
+
+  </section>
+
+  <!-- 푸터 -->
+  <footer>
+    <p>© 2025/07/30</p>
+  </footer>
+
+</body>
+</html>
