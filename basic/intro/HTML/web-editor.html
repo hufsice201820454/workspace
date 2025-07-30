@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>모던 웹 에디터</title>
+  <style>
+    #toolbar select, #toolbar input[type="color"], #toolbar button {
+      margin-right: 8px;
+      padding: 4px 8px;
+    }
+    #editor {
+      border: 1px solid #ccc;
+      min-height: 200px;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    #output {
+      white-space: pre-wrap;
+      border: 1px dashed #aaa;
+      padding: 10px;
+      margin-top: 15px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+<h2>📝 모던 웹 에디터</h2>
+
+<div id="toolbar">
+  <select id="styleSelect">
+    <option value="">--스타일--</option>
+    <option value="bold">굵게</option>
+    <option value="italic">기울임</option>
+    <option value="underline">밑줄</option>
+  </select>
+
+  <input type="color" id="colorPicker" title="글자 색상 🎨">
+
+  <button onclick="saveContent()">저장</button>
+</div>
+
+<div id="editor" contenteditable="true" spellcheck="true">
+  여기에 텍스트를 입력하고, 선택 후 스타일을 적용해보세요.
+</div>
+
+<h3>📄 HTML 결과</h3>
+<div id="output"></div>
+
+<script>
+  const editor = document.getElementById('editor');
+  const styleSelect = document.getElementById('styleSelect');
+  const colorPicker = document.getElementById('colorPicker');
+
+  function applyStyle(type, value = null) {
+    const selection = window.getSelection();
+    if (!selection.rangeCount) return;
+
+    const range = selection.getRangeAt(0);
+
+    if (range.collapsed) {
+      alert('텍스트를 먼저 선택해주세요!');
+      return;
+    }
+
+    // 래핑용 span
+    const span = document.createElement('span');
+
+    // 스타일 적용
+    switch (type) {
+      case 'bold':
+        span.style.fontWeight = 'bold';
+        break;
+      case 'italic':
+        span.style.fontStyle = 'italic';
+        break;
+      case 'underline':
+        span.style.textDecoration = 'underline';
+        break;
+      case 'color':
+        span.style.color = value;
+        break;
+    }
+
+    span.appendChild(range.extractContents());
+    range.deleteContents();
+    range.insertNode(span);
+
+    // 선택 해제
+    selection.removeAllRanges();
+    selection.addRange(range.cloneRange());
+  }
+
+  // 스타일 선택 이벤트
+  styleSelect.addEventListener('change', function () {
+    const style = this.value;
+    if (style) {
+      applyStyle(style);
+      this.value = ''; // 초기화
+    }
+  });
+
+  // 색상 선택 이벤트
+  colorPicker.addEventListener('change', function () {
+    applyStyle('color', this.value);
+  });
+
+  // 저장 버튼 클릭 시
+  function saveContent() {
+    const content = editor.innerHTML;
+    document.getElementById('output').textContent = content;
+  }
+</script>
+
+</body>
+</html>
