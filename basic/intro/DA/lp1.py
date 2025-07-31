@@ -1,5 +1,5 @@
 import os
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = '보안코드'
 
 from langchain_openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
