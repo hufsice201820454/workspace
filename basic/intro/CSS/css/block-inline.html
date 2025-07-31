@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>div display 비교</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .container {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border: 2px dashed #aaa;
+      margin-bottom: 30px;
+    }
+
+    .box {
+      border: 2px solid black;
+      padding: 10px;
+      font-weight: bold;
+      text-align: center;
+      color: white;
+      margin: 5px;
+    }
+
+    .block {
+      display: block;
+      width: 300px;
+      height: 60px;
+      background-color: steelblue;
+    }
+
+    .inline {
+      display: inline;
+      background-color: tomato;
+      /* width/height 무시됨 */
+    }
+
+    .inline-block {
+      display: inline-block;
+      width: 300px;
+      height: 60px;
+      background-color: seagreen;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>div display 속성 비교</h1>
+
+  <h2>1. Block (기본)</h2>
+  <div class="container">
+    <div class="box block">Block 1</div>
+    <div class="box block">Block 2</div>
+  </div>
+  <p>→ 한 줄에 하나씩 차지하고 아래로 떨어짐 (너비·높이 설정 가능)</p>
+
+  <h2>2. Inline</h2>
+  <div class="container">
+    <div class="box inline">Inline 1</div>
+    <div class="box inline">Inline 2</div>
+  </div>
+  <p>→ 인라인 요소처럼 옆으로 나란히 (너비·높이 설정 안 됨)</p>
+
+  <h2>3. Inline-block</h2>
+  <div class="container">
+    <div class="box inline-block">Inline-block 1</div>
+    <div class="box inline-block">Inline-block 2</div>
+  </div>
+  <p>→ 인라인처럼 옆으로 나란히지만, 블록처럼 크기 지정 가능</p>
+
+</body>
+</html>
