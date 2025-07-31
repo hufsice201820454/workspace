@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>2행 3열 Grid 레이아웃</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3열 */
+      grid-template-rows: repeat(2, 100px); /* 2행, 높이 고정 */
+      gap: 10px;
+      padding: 20px;
+      border: 3px dashed #888;
+      background-color: #f9f9f9;
+    }
+
+    .grid-item {
+      background-color: steelblue;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid white;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📦 2행 3열 CSS Grid 예제</h2>
+
+  <div class="grid-container">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Transition & Transform 예제</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    /* 상단 박스 스타일 */
+    .box {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      line-height: 100px;
+      background-color: green;
+      color: white;
+      font-size: 20px;
+      border-radius: 20px;
+      transition: background-color 0.5s, transform 0.5s;
+    }
+
+    /* hover 시 배경색 변경 */
+    .box:hover {
+      background-color: yellow;
+      color: black;
+    }
+
+    /* 버튼 스타일 */
+    button {
+      margin-top: 50px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* 회전 및 색상 변경될 클래스 */
+    .rotated {
+      transform: rotate(45deg);
+      background-color: darkgreen;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="hoverBox" class="box">hover me</div>
+  <button onclick="rotateBox()">회전시키기</button>
+
+  <script>
+    function rotateBox() {
+      const box = document.getElementById('hoverBox');
+      box.classList.toggle('rotated');
+    }
+  </script>
+
+</body>
+</html>
