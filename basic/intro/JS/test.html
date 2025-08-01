@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function test(){
+            if(true){
+                var x = 10;
+                const y = 20;
+                let z = 30;
+            }
+            console.log(x);
+            console.log(y); // ReferenceError: y is not defined -> 블록 밖에서는 접근 불가
+            console.log(z); // ReferenceError: z is not defined -> 블록 밖에서는 접근 불가
+            // var는 함수 스코프, let과 const(상수)는 블록 스코프
+        }
+
+        test();
+        //console.log(x)    
+    </script>
+</body>
+</html>

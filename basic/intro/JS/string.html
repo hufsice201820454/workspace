@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const name = "이름: 홍길동 \n직업: 도적";
+        const name2 = "이름: 홍길동 <br>직업: 도적";
+        const name3 = "이름: 홍길동 \0직업: 도적"
+        console.log(name)//console.log에서는 \n을 토대로 줄바꿈 가능
+        document.write(name2);//document에서 \n은 먹히지 않기 때문에 줄바꿈하려면 <br>태그를 사용해야 함
+        console.log("이름: 홍길동 \0직업: 도적")//\0은 null 문자로, 문자열의 끝을 나타내는 역할을 함. 하지만 console.log에서는 출력되지 않음
+
+        const num = 1024;
+        console.log(num, typeof num); // number 타입
+        const string_num = String(num); //num.toString()
+        console.log(string_num, typeof string_num); // string 타입
+
+        const num2 = 0.7;
+        let sum = num + num2;
+        console.log(sum, typeof sum); // number 타입
+        let s_sum = string_num + num2;
+        console.log(s_sum, typeof s_sum); // string 타입
+        //const를 생각보다 많이 사용하는 이유는 참조형의 변수를 사용할 시 const를 사용하기 때문
+    </script>
+</body>
+</html>

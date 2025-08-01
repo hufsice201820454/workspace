@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("세션 연습");
+        localStorage.setItem("user","hong-gildong");
+        sessionStorage.setItem("user","hong-gildong session");//보통 로그인할때 로그 저장 (아이디만 저장하고 비밀번호는 보안 상 저장하지 않는 방식)
+        //엑시오스 라이브러리로 http request를 보내고 래핑해서 저장하는 것이 일반적
+        //동시 다발적으로 요청이 들어올 때 처리가 가능하기 위해서는 비동기 작업 처리를 진행해야하며 이 떄 사용하는 자바스크립트 빌트인 객체 중 Promise를 사용
+        //JavaScript를 사용하는 궁극적인 목표는 서버에서 사용자 정보를 받아오거나 혹은 올릴 떄 Event 상태로 화면과 서버를 서로 연결시켜주기 위해 사용 -> Event 빌트인 객체
+        //명시적 사용자 승인이 필여한 표준 웹 API 
+        //Native 웹으로 구현하는 것이 점차 늘어나고 하나의 추세로 확장
+    </script>
+</body>
+</html>
