@@ -25,6 +25,30 @@
 
         // 보기 좋게 출력
         console.table(result);
+
+        function addNumbers(...numbers){
+            let sum =0;
+            for (let i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+            }
+            return sum;
+        }
+        console.log(addNumbers(1, 2, 3)); // 6
+        console.log(addNumbers(4, 5, 6, 7, 8)); // 30
+        //불확실한 수의 인수를 받을 떄 ...구문을 사용하여 함수에서 전달된 나머지 인수를 배열로 처리
+
+
+        //함수 반환값의 비구조화(Destructuring) 할당
+        function buildObject(name, age){
+            return {
+                name: name,
+                age: age
+            };
+        
+        }
+        const {name} = buildObject("홍길동", 30);
+        console.log(name); // "홍길동" -> 원하는 변수만 보고 싶을 때 사용
+        
     </script>
 </body>
 </html>
