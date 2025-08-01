@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수 선언하는 3가지 방법 및 시간 설정 방법
+        const now = new Date();
+        time = now.toLocaleTimeString();
+
+        function greet(name) {
+            return `안녕하세요, ${name}님! 현재 시간은 ${time}입니다.`;
+        }
+        document.write(greet("홍길동"));
+
+        const greet2 = (name) =>{
+            return `안녕하세요, ${name}님! 현재 시간은 ${time}입니다.`;
+        }
+        document.write("<br>", greet2("심청"));
+
+        const greet3 = function(name) {
+            return `안녕하세요, ${name}님! 현재 시간은 ${time}입니다.`;
+        }
+        document.write("<br>", greet3("춘향"));
+        
+    </script>
+</body>
+</html>
