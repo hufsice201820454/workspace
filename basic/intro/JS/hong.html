@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const foods = [
+            "쌀", "보리", "콩", "감자", "양파",
+            "마늘", "배추", "무", "고구마", "호박"
+        ];
+
+        const poors = ["철수", "영희", "민수"];
+
+        // 초기 결과 객체 만들기
+        const result = poors.map(name => ({ name, items: [] }));
+
+        // 식량을 순서대로 분배 (반복 순환)
+        foods.forEach((food, index) => {
+            const personIndex = index % poors.length;
+            result[personIndex].items.push(food);
+        });
+
+        // 보기 좋게 출력
+        console.table(result);
+    </script>
+</body>
+</html>

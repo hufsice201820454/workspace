@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const array = [
+            [0,1,2,3],
+            [4,5,6,7],
+            [8,9,10,11]
+        ];
+
+        console.table(array);
+        // 자바스크립트의 배열은 동적 배열. 배열이 생성된 이후에도 배열의 크기를 임의로 변경 가능 하며 push()메소드로 배열 가장 뒤에 원소 추가 가능
+        const arr = [1, 2, 3, 4];
+        console.log(arr);
+        arr.length = 5; //배열에 빈 값 들어감 console에 보면 empty로 되어있음
+        console.log(arr)
+        arr[4] = 10;
+        console.log(arr);
+        arr.push(11); // push
+        console.log(arr); 
+        
+        //스프레드연산자 (...)는 얕은 복사: 객체의 최상위 수준의 속성만 복사되고, 중첩된 객체나 배열은 원본과 참조를 공유
+        const original = [1, [2, 3], 4];
+        const shallowCopyArray = [...original];
+        // : 얕은 복사 확인 -> 최상위 요소는 독립적
+        shallowCopyArray[0] = 10;
+        console.log(original[0]); // 1 (독립적)
+        // 중첩 배열은 참조를 공유하므로 변경 시 원본에도 영향
+        shallowCopyArray[1][0] = 20;
+        console.log(original[1][0]); // 20 (원본도 영향을 받음)
+        //lowdash 라이브러리의 cloneDeep() 메소드를 사용하면 깊은 복사 가능
+        //현업에서 주로 lowdash라이브러리를 주로 이용
+        //배열 함수 : push, pop, shift(배열 첫 요소 제거), unshift(배열 앞 요소 추가), concat, slice(배열 일부 추출 후 새 배열 생성)
+        //splice(배열 기존 요소 제거 후 새 요소 추가), forEach(배열의 각 요소에 대해 주어진 함수 실행), indexOf(배열 요소 위치 반환), includes(배열에 요소가 있는지 확인)
+    </script>
+</body>
+</html>
