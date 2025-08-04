@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            color: red;
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        .big {
+            font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+    <p id="text">이 문장을 강조해보세요!</p>
+
+    <button id="highlight">강조 토글</button>
+
+    <script>
+        const button = document.getElementById("highlight");
+        const p = document.getElementById("text");  // 여기 수정
+
+        button.addEventListener('click', function() {
+            p.classList.toggle('highlight');
+            p.classList.toggle('big');   // font 크기 토글을 위해 추가
+        });
+    </script>
+</body>
+</html>
