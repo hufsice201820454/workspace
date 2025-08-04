@@ -24,3 +24,5 @@ button.addEventListener("click", () =>{
     }
 
 })
+
+//함수 import받기
