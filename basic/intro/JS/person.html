@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name: "홍길동",
+            age: 30,
+            skills: ["검술", "변신술", "월담"],
+            greet : function(){
+                return '안녕하세요?' + this.name + '입니다';
+            },
+
+            greet2: function(time){
+                return `${time} 안녕하세요? ${this.name}입니다.`;
+            }
+        }
+        console.log(person.name);
+        console.log(person.greet());
+        console.log(person.greet2("아침"));
+
+        // person2 = new Object();
+        person2 = {};
+        person2.name = "홍길동"; // 혹은 person2["name"] = "홍길동"; 즉 대괄호로 표기 가능 -> 키 값처럼 할용하기 위해 주로 활용
+        person2.age = 25;
+        console.log(person2.name, person2.age);
+
+        person2.greet = function(time){
+            return `${time} 안녕하세요? ${this.name}입니다.`;
+        }
+        
+        console.log(person2.greet("오후"));
+
+        function Person(name, age, skills){
+            this.name = name;
+            this.age = age;
+            this.skills = skills;
+        }
+
+        const person3 = new Person("홍길동", 30, ["검술", "변신술", "월담"]);
+        console.log("ES5 생성자 함수로 인스턴스 생성")
+        console.log(person3.name, person3.age, person3.skills);
+
+        class Person2{
+            constructor(name, age, skills){
+                this.name = name;
+                this.age = age;
+                this.skills = skills;
+            }
+
+            greet(){
+                return `안녕하세요? ${this.name}입니다.`;
+            }
+
+            greet2(time){
+                return `${time} 안녕하세요? ${this.name}입니다.`;
+            }
+        }
+
+        const person4 = new Person2("홍길동", 30, ["검술", "변신술", "월담"]);
+        console.log("ES6 클래스 정의 후 인스턴스 생성")
+        console.log(person4.name, person4.age, person4.skills);
+
+        // 객체 생성 방법 - Object.create()
+        const child = Object.create(person);
+        //프로토타입에서 상속된 메서드 사용
+        console.log(child.greet());
+
+        child.name = "임꺽정";
+        child.age = 28;
+        child.skills = ["활쏘기", "사냥", "전투"];
+
+        console.log(child.greet());
+        
+        //상속 여부 확인
+        console.log("child.hasOwnProperty('name'):", child.hasOwnProperty('name')); // true
+        console.log("child.hasOwnProperty('greet'):", child.hasOwnProperty('greet')); // false
+        //함수에 대해서만 false가 나오는 이유는 greet() 메서드가 person 객체의 프로토타입에서 상속받았기 때문
+        
+        //객체 생성 방법 - JSON 데이터로부터 객체 생성
+        const json = JSON.stringify(person);
+        const obj = JSON.parse(json); // JSON 문자열을 객체로 변환
+        console.log(json);
+        document.write(json);
+        document.write(person);
+
+        const realhong = {
+            name: "홍길동",
+            age: 25,
+            skills: ["검술", "전략", "분신"],
+            shadow: {
+                color: "검은색"
+            }
+        }
+
+        const fakehong = {...realhong};
+        delete fakehong.shadow;
+        //fakehong.skills.pop(); //이런식으로 얕은 복사를 하면 fakehong 객체를 삭제했을 시 realhong도 영향을 받음 따라서 이런식으로 하면 realhong의 분신도 사라짐
+
+        const temp = JSON.stringify(realhong); // 문자열로 변환
+        const fakehong2 = JSON.parse(temp);    // 객체로 복원
+
+        fakehong2.skills.pop(); 
+        //Javascript Index슬라이싱 방법들
+        //fakehong.skills.filter(skill => skill !== "분신");
+        //const idx = fakehong.skills.indexOf("분신");
+        //if (idx !== -1) {
+        //    fakehong.skills.splice(idx, 1);
+        //}
+
+        console.log("예제")
+        console.log(fakehong);
+        console.log(realhong);
+        console.log(fakehong2);
+
+    </script>
+</body>
+</html>

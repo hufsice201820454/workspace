@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>event handler</h1>
+    <input type = "text" value = "hello">
+    <button id = "myButton" onclick = "showEvent('클릭되었습니다.')" ondblclick = "alert('메세지')">첫번째 버튼</button>
+    <button id = "myButton2" ondblclick = "alert('메세지')">두번째 버튼</button>
+    <button id = "myButton3" ondblclick = "alert('메세지')">세번째 버튼</button>
+    <hr>
+    <div id = "output" style="border: 1px solid;">초기 메세지</div>
+    <script>
+        const myButton3 = document.getElementById("myButton3");
+        myButton3.addEventListener('click', () => {
+            const outputdiv = document.getElementById("output")
+            outputdiv.innerHTML = "세번째 버튼 클릭"; 
+        })//add안에서 함수 생성시 보통 arrrow함수로 함수를 만듬
+
+        myButton3.addEventListener("dblclick", () => {
+            const outputdiv = document.getElementById("output")
+            outputdiv.innerHTML = "세번째 버튼 더블 클릭"; 
+        })//add안에서 함수 생성시 보통 arrrow함수로 함수를 만듬
+
+
+        const myButton2 = document.getElementById("myButton2");
+        myButton2.onclick = function () {
+            const outputdiv = document.getElementById("output")
+            outputdiv.innerHTML = "두번째 버튼"; //클릭하면 초기 메세지 -> 클릭되었습니다. 즉 html안으로 들어감 근데 이런 Innertext 방식은 주로 안씀
+        }
+
+        myButton2.dblclick = function () {
+            const outputdiv = document.getElementById("output")
+            outputdiv.innerHTML = "두번째 버튼 더블 클릭"; //클릭하면 초기 메세지 -> 클릭되었습니다. 즉 html안으로 들어감 근데 이런 Innertext 방식은 주로 안씀
+        }
+
+        function showEvent(message){
+            console.log(message);
+            const outputdiv = document.getElementById("output")
+            outputdiv.innerHTML = message; //클릭하면 초기 메세지 -> 클릭되었습니다. 즉 html안으로 들어감 근데 이런 Innertext 방식은 주로 안씀
+        }
+    </script>
+</body>
+</html>
