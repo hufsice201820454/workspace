@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .message{
+            font-size : 1.5rem; margin-top: 20px;
+        }
+        .success{
+            color:blue;
+        }
+
+        .failure{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <button id = "drawbutton">추첨하기</button>
+    <div id = "message" class = "message"></div>
+    <script src = "promise.js">
+        //promise -> 시간이 오래 걸릴 수 있는 작업은 비동기 방식으로 처리 -> 파일 읽기, 대량 데이터 서버에서 다운로드
+        //비동기 작업이 성공하거나 실패할 때 그 결과를 알려주겠다고 약속하는 객체
+        //Promise는 대기->비동기 작업이 아직 완료 안됨 /  이행 -> 비동기 작업이 성공적 완료 /  거부 -> 비동기 작업이 실패한 상태의 3개 상태로 구분
+        //async와 await는 Promise와 함께 사용되어 비동기 처리를 동기식 코드처럼 변환
+        //async 함수 선언 앞에 붙어 비동기 함수로 변환 항상 Promise를 변환
+        //await async 함수 안에서만 사용하며, Promise가 처리될 때 까지 코드 실행 일시 중지
+    </script>
+</body>
+</html>
