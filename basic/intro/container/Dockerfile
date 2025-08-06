@@ -10,4 +10,4 @@ VOLUME ["/mycode"]
 COPY mycode.py /mycode/mycode.py
 
 CMD ["sh", "-c", "echo 'start server' && sleep infinity"]
-# docker build --tag container-linux:1.0 .
+# docker build --tag container-linux:1.0 .ps 
