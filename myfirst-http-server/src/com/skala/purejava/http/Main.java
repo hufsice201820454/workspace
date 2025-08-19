@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        int port = 8080, threads = 16;
+        //int port = 8080, threads = 16;
         Path dataFile = Path.of("data", "users.json");
 
         // 1. Repository 생성 (파일 없으면 자동으로 [] 초기화됨)
