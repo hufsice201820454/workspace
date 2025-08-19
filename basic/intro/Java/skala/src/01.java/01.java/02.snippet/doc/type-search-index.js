@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Format"},{"p":"<Unnamed>","l":"FormatPrintExample"},{"p":"<Unnamed>","l":"IfTest"},{"p":"<Unnamed>","l":"JavaDocsExample"},{"p":"<Unnamed>","l":"NumberBox"},{"p":"<Unnamed>","l":"StringBuilderExample"},{"p":"<Unnamed>","l":"SynchronizedExample"}];updateSearchResults();
