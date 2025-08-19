@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sk.skala.dto.HelloResponse;
 
-import java.util.HashMap;
-import java.util.Map;
+// import java.util.HashMap;
+// import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
